@@ -1,8 +1,6 @@
 # kbostadium
 
-<img = https://wizzap.ktwiz.co.kr/files/resource/2020/02/13/20200213143844.83b-ab0442cf6dd2.jpg>
 * Review and Amenities Information Project for All Korean Baseball Team Stadiums
-
 
 ### USE
 ```
