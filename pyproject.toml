@@ -1,6 +1,6 @@
 [project]
 name = "kbostadium"
-version = "0.1.0"
+version = "0.2.0"
 description = "Default template for PDM package"
 authors = [
     {name = "<jiwon1118>", email = "<b23386585@gmail.com>"},
@@ -13,7 +13,6 @@ license = {text = "MIT"}
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
-
 
 [tool.pdm]
 distribution = true
