@@ -1,6 +1,8 @@
 on:
   release:
     types: [published]
+
+    
 jobs:
   pypi-publish:
     name: upload release to PyPI
@@ -12,6 +14,8 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
+      
       - uses: pdm-project/setup-pdm@v4
+      
       - name: Publish package distributions to PyPI
         run: pdm publish
