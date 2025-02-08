@@ -78,6 +78,7 @@ $ info-kbo KT위즈
 
 ### Web
 * streamlit 구연 중
+* https://kbostadium-jiwon1118.streamlit.app/
 
 ### DEV
 ```bash
