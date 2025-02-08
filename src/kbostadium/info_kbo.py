@@ -11,7 +11,7 @@ data = {
 }
 
 
-def info_kbo(keyword: str, rcnt: int = 6) -> pd.DataFrame:
+def info_kbo(keyword: str) -> pd.DataFrame:
     # 데이터프레임 생성
     df = pd.DataFrame(data)
     
@@ -19,13 +19,13 @@ def info_kbo(keyword: str, rcnt: int = 6) -> pd.DataFrame:
     if keyword in df["구단"].values:
         # 해당 구단의 데이터 가져오기
         fdf = df[df["구단"] == keyword]
-        return fdf.head(rcnt)
+        return fdf
     else:
         return f"잘못된 구단 이름입니다. 유효한 구단 이름은 {', '.join(df['구단'])} 입니다."
 
 # 출력 함수
-def print_info_kbo(keyword: str, rcnt: int = 6):
-    rdf = info_kbo(keyword, rcnt)
+def print_info_kbo(keyword: str):
+    rdf = info_kbo(keyword)
     print(rdf)
 
 # Typer 실행 함수
