@@ -19,6 +19,7 @@ distribution = true
 
 [project.scripts]
 info-sta  = "kbostadium.info_sta:entry_point"
+
 info-kbo  = "kbostadium.info_kbo:entry_point2"
 
 
