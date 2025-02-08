@@ -11,23 +11,23 @@ data = {
 }
 
 
-def info_kbo(keyword: str, rcnt: int=6) -> pd.DataFrame:
+def info_kbo(keyword: str, rcnt: int = 6) -> pd.DataFrame:
+    # 데이터프레임 생성
     df = pd.DataFrame(data)
-    tdf = df.transpose()
-    tdf.columns = tdf.iloc[0]
-    # 유효한 열 이름인지 체크
-    if keyword in tdf.iloc[0]:
-        fdf = tdf[keyword]
-        #sdf = fdf.sort_values(by=keyword, ascending=asc).reset_index(drop=True) # 입력한 키워드를 기준으로 sort
-        rdf = fdf.head(rcnt) # 원하는 개수만큼 출력
-        return rdf
+    
+    # 유효한 구단 이름인지 확인
+    if keyword in df["구단"].values:
+        # 해당 구단의 데이터 가져오기
+        fdf = df[df["구단"] == keyword]
+        return fdf.head(rcnt)
     else:
-        return f"잘못된 구단 이름입니다. 유효한 구단 이름은 {', '.join(tdf.iloc[0])} 입니다."
+        return f"잘못된 구단 이름입니다. 유효한 구단 이름은 {', '.join(df['구단'])} 입니다."
 
-def print_info_kbo(keyword: str, rcnt: int=6):
-    # 필터링된 데이터를 출력
+# 출력 함수
+def print_info_kbo(keyword: str, rcnt: int = 6):
     rdf = info_kbo(keyword, rcnt)
     print(rdf)
 
+# Typer 실행 함수
 def entry_point2():
     typer.run(print_info_kbo)
