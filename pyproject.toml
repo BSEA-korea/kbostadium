@@ -1,11 +1,11 @@
 [project]
 name = "kbostadium"
-version = "0.3.0"
+version = "0.4.0"
 description = "Default template for PDM package"
 authors = [
-    {name = "<jiwon1118>", email = "<b23386585@gmail.com>"},
+    {name = "jiwon1118", email = "b23386585@gmail.com"},
 ]
-dependencies = ["typer>=0.15.1", "pytest>=8.3.4", "jupyterlab>=4.3.5", "pandas>=2.2.3", "requests>=2.32.3"]
+dependencies = ["typer>=0.15.1", "pytest>=8.3.4", "jupyterlab>=4.3.5", "pandas>=2.2.3", "requests>=2.32.3", "psycopg[binary,pool]>=3.2.4", "streamlit>=1.42.0", "python-dotenv>=1.0.1"]
 requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
@@ -19,6 +19,7 @@ distribution = true
 
 [project.scripts]
 info-sta  = "kbostadium.info_sta:entry_point"
+info-kbo  = "kbostadium.info_kbo:entry_point2"
 
 
 [dependency-groups]
